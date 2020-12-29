@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment page</title>
+</head>
+<body>
+    <!-- Подключение библиотеки -->
+    <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
+
+    <!-- HTML-элемент, в котором будет отображаться платежная форма -->
+    <div id="payment-form"></div>
+
+    <script>
+        // Документация по форме оплаты:
+        //      https://yookassa.ru/developers/payment-forms/widget#main-scenario
+        // Варианты имеющихся SDK и возможностей подключения оплаты:
+        //      https://yookassa.ru/developers/using-api/using-sdks#wsdk
+        // Тарифы:
+        //      https://yookassa.ru/fees/
+
+        // Для тестирования платежей:
+        //      https://yookassa.ru/developers/using-api/testing
+
+        // Инициализация виджета. Все параметры обязательные
+        // При необходимости можно настроить цветовую гамму:
+        //      https://yookassa.ru/developers/payment-forms/widget#customize-color
+        const checkout = new window.YooMoneyCheckoutWidget({
+            // Токен, который перед проведением оплаты нужно получить от ЮKassa
+            confirmation_token: 'confirmation-token',
+            // Ссылка на страницу завершения оплаты
+            return_url: 'https://presniy.com/get-your-product.html',
+            error_callback(error) {
+                // Обработка ошибок инициализации
+                // Коды ошибок:
+                //      https://yookassa.ru/developers/payment-forms/widget#errors
+                console.error(error);
+            }
+        });
+
+        // Отображение платежной формы в контейнере
+        checkout.render('payment-form')
+            // После отображения платежной формы метод render
+            // возвращает Promise (можно не использовать)
+            .then(() => {
+                // Код, который нужно выполнить после отображения платежной формы
+                console.info('Payment form is rendered!')
+            });
+    </script>
+</body>
+</html>
