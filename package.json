@@ -1,0 +1,15 @@
+{
+    "name": "presniy-com",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/presniy/presniy.github.io",
+    "author": "tohasan <tohasan@yandex.ru>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build:welcome-email": "mjml email/welcome-email.mjml -o email/welcome-email.html"
+    },
+    "devDependencies": {
+        "mjml": "4.7.1"
+    }
+}
