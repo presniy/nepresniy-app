@@ -1,9 +1,76 @@
+:root {
+    --font-family: 'Neucha', cursive;
+    --primary: #e59f4e;
+    --accent: #f35c54;
+    --text-opposite: #fff;
+}
+
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
     box-sizing: border-box;
+    font-family: var(--font-family);
+    font-size: 16px;
+}
+
+*:active,
+*:focus,
+*:hover {
+    outline: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .happy-new-year {
     width: 100%;
+    border-bottom: 3px solid var(--accent);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.gift {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.gift__title {
+    margin-top: 2rem;
+}
+
+.gift__present {
+    height: 25vmin;
+    max-height: 7.5rem;
+}
+
+.gift__present-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift__action {
+    width: 238px;
+    height: 60px;
+    border-radius: 0.375rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    color: var(--text-opposite);
+    background-color: var(--primary);
 }
