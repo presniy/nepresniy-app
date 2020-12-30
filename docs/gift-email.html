@@ -55,8 +55,25 @@
             </span>
         </div>
         <div class="guide__action">
+            <!-- Link is added using the script below -->
             <a class="btn">Следуй за подарком!</a>
         </div>
     </section>
+
+    <script>
+        const returnUrl = encodeURIComponent('https://mail.yandex.ru/touch/folder/1/message/174514485560606724');
+        const fallbackUrl = encodeURIComponent('https://mail.yandex.ru?noretpath=1');
+        const link = [
+            'https://passport.yandex.ru/auth',
+            '?from=mail',
+            '&login=alexey@presniy.com',
+            '&origin=hostroot_homer_auth_ru',
+            `&retpath=${returnUrl}`,
+            `&backpath=${fallbackUrl}`
+        ].join('');
+
+        const btn = document.querySelector('.guide__action .btn');
+        btn.setAttribute('href', link);
+    </script>
 </body>
 </html>

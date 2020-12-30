@@ -1,18 +1,10 @@
-# Link to sign in
+# Email parameters
 
-```
-https://passport.yandex.ru/auth
-	?from=mail
-	&login=alexey@presniy.com
-	&origin=hostroot_homer_auth_ru
-	&retpath=https%3A%2F%2Fmail.yandex.ru%2F%3Fuid%3D1130000048606586%23message%2F174514485560606722
-	&backpath=https%3A%2F%2Fmail.yandex.ru%3Fnoretpath%3D1
-```
+To: alexey@presniy.com
 
-Parameters:
-* `login`, set exactly the login we need
-* `retpath`, contains message id so that after authorization, 
-a user sees the concrete message.
+Subject: Добро пожаловать в свой почтовый ящик! И с Новым Годом!
+
+Body: welcome-email.generated.html
 
 # How to create a html template in gmail
 

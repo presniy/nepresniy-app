@@ -7,7 +7,7 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "build:welcome-email": "mjml email/welcome-email.mjml -o email/welcome-email.html"
+        "build:welcome-email": "mjml email/welcome-email.mjml -o email/welcome-email.generated.html"
     },
     "devDependencies": {
         "mjml": "4.7.1"
