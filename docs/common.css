@@ -1,0 +1,65 @@
+/** Variables **/
+
+:root {
+    --font-family: 'Neucha', cursive;
+    --primary: #e59f4e;
+    --accent: #f35c54;
+    --text-opposite: #fff;
+}
+
+/** Resets **/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    font-size: 16px;
+}
+
+*:active,
+*:focus,
+*:hover {
+    outline: 0;
+}
+
+/** Basic **/
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+}
+
+.title {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: var(--text-opposite);
+    background-color: #7e9997;
+}
+
+.attention {
+    font-weight: 700;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 238px;
+    height: 60px;
+    border-radius: 0.375rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: var(--text-opposite);
+    background-color: var(--primary);
+}
+
+.icon {
+    width: 1rem;
+}
