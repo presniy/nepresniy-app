@@ -16,19 +16,31 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link href="demo.css" rel="stylesheet"/>
 </head>
-<body>
-    <section class="guide">
-        <h1 class="guide__title">
+<body class="page">
+    <header class="title">
+        <h1>
             В Новом Году твои покупатели смогут
             оплачивать продукты самостоятельно!
         </h1>
+    </header>
+    <section class="guide">
         <div class="guide__content">
-            Попробуй сам!
-            Как ты понимаешь, наш путь начинается с поста в instagram...
-            И, да, скопируй про запас себе номер банковской карты:
-            <span class="guide__card-number">5555 5555 5555 5555</span> 📄
+            <span class="guide__content-line">Попробуй сам!</span>
+            <span class="guide__content-line">Как ты понимаешь, наш путь начинается с поста в instagram...</span>
+            <span class="guide__content-line">
+                И, да, скопируй про запас себе номер банковской карты:
+                <span class="guide__card-line">
+                    <span class="guide__card-number">5555 5555 5555 5555</span>
+                    <img class="icon" src="./assets/icons/copy.svg" alt="Копировать"/>
+                </span>
+            </span>
         </div>
+        <button class="btn">Погнали!</button>
     </section>
 </body>
 </html>

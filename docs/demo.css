@@ -24,43 +24,48 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    text-align: center;
 }
 
-.happy-new-year {
-    width: 100%;
-    border-bottom: 3px solid var(--accent);
+.title {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: var(--text-opposite);
+    background-color: #7e9997;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 1rem;
-}
-
-.gift {
+.guide {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: stretch;
     flex-grow: 1;
-    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem;
 }
 
-.gift__title {
-    margin-top: 2rem;
-}
-
-.gift__present {
-    height: 25vmin;
-    max-height: 7.5rem;
-}
-
-.gift__present-container {
+.guide__content {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+}
+
+.guide__content-line {
+    display: block;
+    line-height: 1.4;
+}
+
+.guide__card-line {
+    display: block;
+    margin-top: 1rem;
+}
+
+.guide__card-number {
+    padding: .125rem .5rem;
+    color: var(--text-opposite);
+    background-color: var(--accent);
 }
 
 .btn {
@@ -73,4 +78,8 @@ html, body {
     outline: none;
     color: var(--text-opposite);
     background-color: var(--primary);
+}
+
+.icon {
+    width: 1rem;
 }
