@@ -21,8 +21,37 @@
     <!-- Подключение библиотеки -->
     <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
 
+    <div class="product">
+        product: <span class="product__id"></span>
+    </div>
+
     <!-- HTML-элемент, в котором будет отображаться платежная форма -->
     <div id="payment-form"></div>
+
+    <script>
+        const url = window.location.href;
+        const [, queryString] = url.split('?');
+        const rawParams = queryString.split('&');
+        const params = rawParams.reduce(
+            (prev, current) => {
+                const [key, value] = current.split('=');
+
+                return {
+                    ...prev,
+                    [kebabCaseToCamelCase(key)]: decodeURIComponent(value)
+                }
+            },
+            {}
+        );
+        console.log('params:', params);
+
+        const elProductId = document.querySelector('.product__id');
+        elProductId.innerHTML = params.productId;
+
+        function kebabCaseToCamelCase(str) {
+            return str.replace(new RegExp('-[a-z]', 'g'), value => value[1].toUpperCase());
+        }
+    </script>
 
     <script>
         // Документация по форме оплаты:

@@ -110,6 +110,17 @@ html, body {
     font-weight: var(--font-bold);
 }
 
+.publication__message-highlighted {
+    text-decoration: underline;
+    background-color: yellow;
+}
+
+.publication__message-deleted {
+    text-decoration: line-through;
+    color: #fff;
+    background-color: #f35c54;
+}
+
 .publication__tags {
     padding: 0 var(--content-padding-sides);
 }
