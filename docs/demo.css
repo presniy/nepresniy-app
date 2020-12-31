@@ -24,9 +24,10 @@
 .guide__card-line {
     display: block;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.guide__card-number {
+.guide__card-attribute {
     padding: .125rem .5rem;
     color: var(--text-opposite);
     background-color: var(--accent);
