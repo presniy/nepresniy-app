@@ -27,12 +27,6 @@ html, body {
 /** Basic **/
 
 .page {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: stretch;
-    align-items: stretch;
     text-align: center;
 }
 
@@ -52,14 +46,7 @@ html, body {
 }
 
 .btn {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    width: 238px;
-    height: 60px;
+    padding: 1rem 2rem;
     border-radius: 0.375rem;
     font-family: inherit;
     font-size: 1.5rem;
@@ -109,14 +96,6 @@ html, body {
 }
 
 .product__content_mode_download {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
     text-align: center;
     top: 0;
     outline: none;

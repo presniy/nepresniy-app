@@ -4,22 +4,15 @@
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
     padding: 1rem;
+    text-align: center;
 }
 
 .gift {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: stretch;
-    flex-grow: 1;
 }
 
 .gift__title {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .gift__present {
@@ -28,8 +21,8 @@
 }
 
 .gift__present-container {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.gift__action-container {
 }
