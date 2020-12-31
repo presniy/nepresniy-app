@@ -87,9 +87,9 @@
                 }
             ]
         ]);
-        console.log()
+        console.log();
 
-        const productId = Number(params.productId)
+        const productId = Number(params.productId);
         const product = products.get(productId);
         console.info('product:', product);
 
@@ -113,6 +113,8 @@
     </script>
 
     <script>
+        init();
+
         async function init() {
             const confirmationToken = await getConfirmationToken();
             showPaymentForm(confirmationToken);
@@ -120,7 +122,7 @@
 
         async function getConfirmationToken() {
             const result = await postData(
-                'https://8igdhll8tl.execute-api.us-east-2.amazonaws.com/default/not-a-presniy-lambda-request-payment',
+                'https://feb3e51dd4b4.ngrok.io/request-payment',
                 {
                     'total': 700,
                     'product': {
