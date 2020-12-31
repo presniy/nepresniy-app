@@ -57,8 +57,6 @@ html, body {
 }
 
 .publication {
-    display: flex;
-    flex-direction: column;
     padding-bottom: 28px;
 }
 
@@ -82,14 +80,22 @@ html, body {
 }
 
 .publication__action-panel {
-    display: flex;
     padding: 6px var(--content-padding-sides);
-    flex-direction: row;
-    justify-content: space-between;
+}
+
+.publication__action-panel:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.publication__action-group_pos_left {
+    float: left;
 }
 
 .publication__action-group_pos_right {
     margin-right: -12px;
+    float: right;
 }
 
 .publication__action {
@@ -103,7 +109,6 @@ html, body {
 
 .publication__message {
     padding: 6px var(--content-padding-sides);
-    flex-grow: 1;
 }
 
 .publication__message-author {
@@ -130,8 +135,12 @@ html, body {
 }
 
 .author {
-    display: flex;
-    flex-direction: row;
+}
+
+.author:after {
+    clear: both;
+    content: "";
+    display: table;
 }
 
 .author__logo {
@@ -141,12 +150,10 @@ html, body {
     margin-right: -4px;
     padding-right: 12px;
     width: 44px;
+    float: left;
 }
 
 .author__content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
 }
 
 .author__main-info {
@@ -160,5 +167,7 @@ html, body {
 
 .author__actions {
     width: 16px;
+    float: right;
+    margin-top: -1.8rem;
 }
 

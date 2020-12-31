@@ -1,19 +1,10 @@
 .guide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: stretch;
-    flex-grow: 1;
     font-size: 1.4rem;
     padding: 1rem;
 }
 
 .guide__content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 2.4rem;
 }
 
 .guide__content-line {
