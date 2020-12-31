@@ -21,5 +21,6 @@
 .guide__card-attribute {
     padding: .125rem .5rem;
     color: var(--text-opposite);
+    text-decoration: inherit;
     background-color: var(--accent);
 }

@@ -53,10 +53,10 @@
             const result = await postData(
                 'https://feb3e51dd4b4.ngrok.io/request-payment',
                 {
-                    'total': 700,
+                    'total': product.price,
                     'product': {
-                        'id': 1,
-                        'title': 'Торт Вайолет'
+                        'id': product.id,
+                        'title': product.title
                     }
                 }
             );
