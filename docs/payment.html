@@ -10,23 +10,36 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <!-- TODO: revert -->
+    <!--    <link rel="manifest" href="./assets/favicon/site.webmanifest">-->
     <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="./assets/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
+    <link href="common.css" rel="stylesheet"/>
+    <link href="payment.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="page">
     <!-- Подключение библиотеки -->
     <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
 
     <div class="product">
-        product: <span class="product__id"></span>
+        <img class="product__image"
+             src="./assets/products/product-01-cake-violet.jpg"
+             alt="Рецептура безглютенового торта «Вайолет»"/>
+        <div class="product__content">
+            <span class="product__title">Рецептура безглютенового торта «Вайолет»</span>,
+            <span class="product__price">₽<span class="product__price-value">700</span></span>
+        </div>
     </div>
 
     <!-- HTML-элемент, в котором будет отображаться платежная форма -->
-    <div id="payment-form"></div>
+    <div id="payment-form" class="payment-form"></div>
 
     <script>
         const url = window.location.href;
@@ -39,23 +52,67 @@
                 return {
                     ...prev,
                     [kebabCaseToCamelCase(key)]: decodeURIComponent(value)
-                }
+                };
             },
             {}
         );
         console.log('params:', params);
 
-        const elProductId = document.querySelector('.product__id');
-        elProductId.innerHTML = params.productId;
+        const products = new Map([
+            [
+                1,
+                {
+                    id: 1,
+                    title: 'Рецептура безглютенового торта «Вайолет»',
+                    price: 700,
+                    image: './assets/products/product-01-cake-violet.jpg'
+                }
+            ],
+            [
+                2,
+                {
+                    id: 2,
+                    title: 'Вторая половину книги (23 изделия)',
+                    price: 14500,
+                    image: './assets/products/product-02-the-part-2-of-the-book.jpg'
+                }
+            ],
+            [
+                3,
+                {
+                    id: 3,
+                    title: 'Полное собрание рецептур «46 недель» (46 изделий)',
+                    price: 22100,
+                    image: './assets/products/product-03-the-whole-book.jpg'
+                }
+            ]
+        ]);
+        console.log()
+
+        const productId = Number(params.productId)
+        const product = products.get(productId);
+        console.info('product:', product);
+
+        linkProductToTheCard(product);
 
         function kebabCaseToCamelCase(str) {
             return str.replace(new RegExp('-[a-z]', 'g'), value => value[1].toUpperCase());
         }
+
+        function linkProductToTheCard(product) {
+            const productImageEl = document.querySelector('.product__image');
+            productImageEl.setAttribute('src', product.image);
+            productImageEl.setAttribute('alt', product.title);
+
+            const productTitleEl = document.querySelector('.product__title');
+            productTitleEl.innerHTML = product.title;
+
+            const productPriceEl = document.querySelector('.product__price-value');
+            productPriceEl.innerHTML = product.price;
+        }
     </script>
 
     <script>
-        init();
-
         async function init() {
             const confirmationToken = await getConfirmationToken();
             showPaymentForm(confirmationToken);
@@ -65,10 +122,10 @@
             const result = await postData(
                 'https://8igdhll8tl.execute-api.us-east-2.amazonaws.com/default/not-a-presniy-lambda-request-payment',
                 {
-                    "total": 700,
-                    "product": {
-                        "id": 1,
-                        "title": "Торт Вайолет"
+                    'total': 700,
+                    'product': {
+                        'id': 1,
+                        'title': 'Торт Вайолет'
                     }
                 }
             );
@@ -79,7 +136,6 @@
         async function postData(url = '', data = {}) {
             const response = await fetch(url, {
                 method: 'POST',
-                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -142,7 +198,7 @@
                 // возвращает Promise (можно не использовать)
                 .then(() => {
                     // Код, который нужно выполнить после отображения платежной формы
-                    console.info('Payment form is rendered!')
+                    console.info('Payment form is rendered!');
                 });
         }
     </script>
