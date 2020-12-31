@@ -54,40 +54,97 @@
     </script>
 
     <script>
-        // Документация по форме оплаты:
-        //      https://yookassa.ru/developers/payment-forms/widget#main-scenario
-        // Варианты имеющихся SDK и возможностей подключения оплаты:
-        //      https://yookassa.ru/developers/using-api/using-sdks#wsdk
-        // Тарифы:
-        //      https://yookassa.ru/fees/
+        init();
 
-        // Для тестирования платежей:
-        //      https://yookassa.ru/developers/using-api/testing
+        async function init() {
+            const confirmationToken = await getConfirmationToken();
+            showPaymentForm(confirmationToken);
+        }
 
-        // Инициализация виджета. Все параметры обязательные
-        // При необходимости можно настроить цветовую гамму:
-        //      https://yookassa.ru/developers/payment-forms/widget#customize-color
-        const checkout = new window.YooMoneyCheckoutWidget({
-            // Токен, который перед проведением оплаты нужно получить от ЮKassa
-            confirmation_token: 'confirmation-token',
-            // Ссылка на страницу завершения оплаты
-            return_url: 'https://presniy.com/get-your-product.html',
-            error_callback(error) {
-                // Обработка ошибок инициализации
-                // Коды ошибок:
-                //      https://yookassa.ru/developers/payment-forms/widget#errors
-                console.error(error);
-            }
-        });
+        async function getConfirmationToken() {
+            const result = await postData(
+                'https://8igdhll8tl.execute-api.us-east-2.amazonaws.com/default/not-a-presniy-lambda-request-payment',
+                {
+                    "total": 700,
+                    "product": {
+                        "id": 1,
+                        "title": "Торт Вайолет"
+                    }
+                }
+            );
 
-        // Отображение платежной формы в контейнере
-        checkout.render('payment-form')
-            // После отображения платежной формы метод render
-            // возвращает Promise (можно не использовать)
-            .then(() => {
-                // Код, который нужно выполнить после отображения платежной формы
-                console.info('Payment form is rendered!')
+            return result.confirmation.confirmation_token;
+        }
+
+        async function postData(url = '', data = {}) {
+            const response = await fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
             });
+
+            if (!response.ok) {
+                throw new Error('Something goes wrong during the request of confirmation code');
+            }
+
+            return response.json(); // parses JSON response into native JavaScript objects
+        }
+
+        function showPaymentForm(confirmationToken) {
+            // Документация по форме оплаты:
+            //      https://yookassa.ru/developers/payment-forms/widget#main-scenario
+            // Варианты имеющихся SDK и возможностей подключения оплаты:
+            //      https://yookassa.ru/developers/using-api/using-sdks#wsdk
+            // Тарифы:
+            //      https://yookassa.ru/fees/
+
+            // Для тестирования платежей:
+            //      https://yookassa.ru/developers/using-api/testing
+
+            // Тестовое окружение API.Яндекс.Кассы:
+            //      https://github.com/yoomoney/yookassa-github-docs/blob/f8718e06ecc5571261c4ff4e4ca520b3bf1353a5/checkout-api/sample/rest/insomnia/how-to.md
+            //
+            // 1. В тестовом окружении представлены примеры для оплаты банковской картой
+            // (реальных средств здесь нет, только тестовые).
+            // 2. Используйте тестовую карту: 5555555555554444, срок действия: 12 20, cvv: 000.
+            //      Или другие тестовые карты.
+            // 3. Вы будете взаимодействовать с нашей боевой системой в режиме real-time:
+            //      - выполняя запрос, вы получите наглядное представление о том, какой запрос отправляется, какой ответ возвращается и т.д.;
+            //      - сможете при необходимости изменить запрос.
+            // 4. На каждом шаге есть помощь на вкладке "Docs" и необходимые ссылки.
+            // 5. Уведомления о смене статуса заказа поступают на URL для уведомлений,
+            // но вы их не увидите, т.к. он общий, закрытый, поэтому статус заказа
+            // в данном публичном магазине надо запрашивать через запрос статуса.
+            // 6. Регистрации не требуется, всё работает из коробки.
+
+            // Инициализация виджета. Все параметры обязательные
+            // При необходимости можно настроить цветовую гамму:
+            //      https://yookassa.ru/developers/payment-forms/widget#customize-color
+            const checkout = new window.YooMoneyCheckoutWidget({
+                // Токен, который перед проведением оплаты нужно получить от ЮKassa
+                confirmation_token: confirmationToken,
+                // Ссылка на страницу завершения оплаты
+                return_url: 'https://presniy.com/get-your-product.html',
+                error_callback(error) {
+                    // Обработка ошибок инициализации
+                    // Коды ошибок:
+                    //      https://yookassa.ru/developers/payment-forms/widget#errors
+                    console.error(error);
+                }
+            });
+
+            // Отображение платежной формы в контейнере
+            checkout.render('payment-form')
+                // После отображения платежной формы метод render
+                // возвращает Promise (можно не использовать)
+                .then(() => {
+                    // Код, который нужно выполнить после отображения платежной формы
+                    console.info('Payment form is rendered!')
+                });
+        }
     </script>
 </body>
 </html>
