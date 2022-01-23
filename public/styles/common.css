@@ -33,14 +33,30 @@ article {
     object-fit: cover;
 }
 
-h1 {
-    margin: 0;
-    padding: 20px var(--content-padding);
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-    font-size: 2rem;
+    padding: 20px var(--content-padding);
 
     background-color: var(--primary);
     color: var(--text-opposite);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.profile-photo {
+    width: 36px;
+    height: 36px;
+
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
 section {
@@ -66,7 +82,9 @@ a {
 button,
 .btn {
     padding: 15px 30px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     border-radius: 4px;
 
     font-family: inherit;
@@ -96,6 +114,38 @@ footer {
     padding-bottom: 40px;
     padding-left: var(--content-padding);
 
-    opacity: .5;
+    color: gray;
     font-size: .75rem;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.dialog_opened {
+    display: block;
+}
+
+.dialog__body {
+    margin: 40px auto 0;
+    padding: 40px;
+    max-width: 400px;
+
+    border-radius: 2px;
+    background-color: #f5f5f5;
+}
+
+.dialog__action {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.icon {
+    font-size: 1.25rem;
 }

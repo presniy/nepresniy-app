@@ -20,36 +20,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+
     <link href="../../styles/common.css" rel="stylesheet"/>
 </head>
 <body>
-    <aside>
-        <img class="cover" alt="Ваниль" src="../../assets/bg/vanilla-06.jpg"/>
-    </aside>
-    <article>
+<aside>
+    <img class="cover" alt="Ваниль" src="../../assets/bg/vanilla-06.jpg"/>
+</aside>
+<article>
+    <header>
         <h1 class="title">Ванильный спринт</h1>
-        <section class="content">
-            <p>Вы выбрали <b class="special special_type_option">тариф Премиум</b>!</p>
-            <p>Этот тариф включает:</p>
-            <ul>
-                <li>Билет на участие без необходимости выполнения дополнительных условий</li>
-                <li>Удобный файл с рецептурой, который Вы сможете оставить себе и после окончания спринта</li>
-                <li>Участие в розыгрыше дополнительного приза!</li>
-            </ul>
-            <p>Период проведения: <b>01.02.2020 - 08.02.2020</b></p>
+        <object class="profile-photo"></object>
+    </header>
+    <section class="content">
+        <p><span class="greeting">Вы</span> выбрали <b class="special special_type_option">тариф Премиум</b>!</p>
+        <p>Этот тариф включает:</p>
+        <ul>
+            <li>Билет на участие без необходимости выполнения дополнительных условий</li>
+            <li>Удобный файл с рецептурой, который Вы сможете оставить себе и после окончания спринта</li>
+            <li>Участие в розыгрыше дополнительного приза!</li>
+        </ul>
+        <p>Период проведения: <b>01.02.2020 - 08.02.2020</b></p>
+        <p>
+            Цена участия:<br/>
+            <b class="price">₽1000</b>
+        </p>
+        <form>
+            <button type="submit">Купить</button>
+        </form>
+    </section>
+    <footer>
+        Организатор мероприятия: Алексей Пресный<br/>
+        E-mail: alexey@presniy.ru<br/>
+        Instagram: <a href="https://www.instagram.com/alexey_pres/">@alexey_pres</a>
+    </footer>
+</article>
+
+<dialog class="dialog">
+    <div class="dialog__body">
+        <div class="dialog__content">
+            <p><b>Спасибо за интерес к моим мероприятиям!</b></p>
             <p>
-                Цена участия:<br/>
-                <b class="price">₽1000</b>
+                Для продолжения необходимо авторизоваться в моём приложении.<br/>
+                Это очень просто - нужно всего лишь нажать кнопку ниже :)
             </p>
-            <form>
-                <button type="submit">Купить</button>
-            </form>
-        </section>
-        <footer>
-            Организатор мероприятия: Алексей Пресный<br/>
-            E-mail: alexey@presniy.ru<br/>
-            Instagram: <a href="https://www.instagram.com/alexey_pres/">@alexey_pres</a>
-        </footer>
-    </article>
+        </div>
+        <div class="dialog__action">
+            <a class="btn btn-auth" href="#">
+                Войти | Instagram
+                <i class="icon fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</dialog>
+
+<script src="../../scripts/app.js" type="module"></script>
 </body>
 </html>
