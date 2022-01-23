@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата услуги</title>
+    <link rel="stylesheet" type="text/css" href="https://info.paymaster.ru/pm-widget-test/script/css/widget.css">
+
+    <style>
+        .btn-buy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 40px;
+            background-color: #da4d4d;
+            color: #FFF;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 4px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-buy" onclick="widget_1642958080163.show()">
+    Купить
+</div>
+
+<div id="pm-widget-1642958080163-modal" class="pmw_modal-window">
+    <div id="pm-widget-1642958080163"></div>
+    <div onclick="widget_1642958080163.close()" class="close"></div>
+    <div onclick="widget_1642958080163.close()" class="overlay"></div>
+</div>
+
+<script src="https://info.paymaster.ru/pm-widget-test/script/widget.bundle.js"></script>
+<script>
+    var PM_WIDGET_CONFIG_1642958080163 = {
+        'paymentForm': {
+            'value': {
+                'description': {
+                    'label': 'Наименование услуги',
+                    'access': 'readonly',
+                    'value': 'Ванильный спринт'
+                },
+                'amount': { 'label': 'Сумма оплаты', 'access': 'readonly', 'value': '1000' },
+                'merchantId': { 'value': '9c175695-8d5e-45a1-a911-57533ae51f45' }
+            }
+        },
+        'payment': {
+            'submitText': 'Оплатить',
+            'allowExternal': false,
+            'methods': ['bankcard', 'wmr', 'wmp', 'sbp']
+        },
+        'placement': 'modal'
+    };
+
+    var widget_1642958080163 = new PayMasterWidget();
+    widget_1642958080163.mount('pm-widget-1642958080163', PM_WIDGET_CONFIG_1642958080163);
+</script>
+</body>
+</html>
