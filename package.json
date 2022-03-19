@@ -7,7 +7,7 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "serve": "http-server-spa public",
+        "serve": "http-server-spa public index.html 8181",
         "build:welcome-email": "mjml email/welcome-email.mjml -o email/gen/welcome-email.generated.html"
     },
     "devDependencies": {
