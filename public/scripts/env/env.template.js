@@ -1,7 +1,7 @@
 export const env = {
     bff: {
         urls: {
-            base: 'http://localhost:3000/api',
+            base: '${BFF_API_URL}/api',
             payment: '/payment'
         }
     }
