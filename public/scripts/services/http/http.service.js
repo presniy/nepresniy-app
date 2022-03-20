@@ -1,14 +1,7 @@
 export class HttpService {
 
     get(url) {
-        const token = localStorage.getItem('token');
-        const headers = token ? { Authorization: `Bearer ${token}` } : {};
-
-        return this.request(fetch(url, { headers }));
-    }
-
-    post(url) {
-        return this.request(fetch(url, { method: 'POST' }));
+        return this.request(fetch(url));
     }
 
     request(fetchRequest) {
