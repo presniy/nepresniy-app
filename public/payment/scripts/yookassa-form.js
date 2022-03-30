@@ -1,26 +1,14 @@
 var kassaConstructForm = kassaConstructForm || {};
-(function(namespace) {
-    if (typeof namespace.main !== "undefined") {
+(function (namespace) {
+    if (typeof namespace.main !== 'undefined') {
         namespace.main.updateHandlers();
         return namespace;
     }
 
     namespace.main = (function () {
-        const COUNT_STEP = 1;
-
-        const _suppMethods =  {
+        const _suppMethods = {
             formatPrice(price) {
-                return new Intl.NumberFormat('ru-RU', {style: "currency", currency: "RUB"}).format(price);
-            },
-            countFilter(input) {
-                input.value = parseFloat(input.value).toFixed(2);
-                return this;
-            },
-            calculateProductPrice(input) {
-                let productPriceOutput = input.findParents('.ym-product').querySelector('.ym-product-price');
-                let price = parseFloat(input.value) * parseFloat(productPriceOutput.dataset.price);
-                productPriceOutput.innerText = _suppMethods.formatPrice(price);
-                return this;
+                return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(price);
             },
             calculateFullPrice(form) {
                 let resultPriceOutput = form.querySelector('.ym-result-price');
@@ -34,7 +22,7 @@ var kassaConstructForm = kassaConstructForm || {};
                 productsPrice.forEach(function (productLine) {
                     let price = productLine.textContent.replace(/\s/g, '').replace(',', '.');
                     fullPrice += parseFloat(price);
-                })
+                });
                 form.querySelector('.ym-sum-input').value = fullPrice;
                 if (resultPriceOutput !== null) {
                     resultPriceOutput.querySelector('.ym-text-crop').innerText = resultPriceOutput.dataset.text;
@@ -50,20 +38,20 @@ var kassaConstructForm = kassaConstructForm || {};
                     contactInput = this.getAvailableCustomerContact(form);
                 }
 
-                const contactPattern = /^([\+]{0,1}[0-9]{9})|((([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})))$/;
+                const contactPattern = /^([+]?[0-9]{9})|((([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})))$/;
                 if (contactInput !== null && !contactPattern.test(String(contactInput.value).toLowerCase())) {
                     let inputType = contactInput.getAttribute('name');
 
-                    let errorText = "РЈРєР°Р¶РёС‚Рµ С‚РµР»РµС„РѕРЅ РёР»Рё email РґР»СЏ С‡РµРєР°";
-                    if (inputType === "cps_phone") {
-                        errorText = "РЈРєР°Р¶РёС‚Рµ С‚РµР»РµС„РѕРЅ РґР»СЏ С‡РµРєР°";
-                    } else if (inputType === "cps_email") {
-                        errorText = "РЈРєР°Р¶РёС‚Рµ email РґР»СЏ С‡РµРєР°";
+                    let errorText = 'Укажите телефон или email для чека';
+                    if (inputType === 'cps_phone') {
+                        errorText = 'Укажите телефон для чека';
+                    } else if (inputType === 'cps_email') {
+                        errorText = 'Укажите email для чека';
                     }
 
                     errors.push({
                         field: contactInput,
-                        text: errorText,
+                        text: errorText
                     });
                 }
 
@@ -71,7 +59,7 @@ var kassaConstructForm = kassaConstructForm || {};
                 if (sumInput.value <= 0) {
                     errors.push({
                         field: sumInput,
-                        text: 'РЈРєР°Р¶РёС‚Рµ СЃСѓРјРјСѓ',
+                        text: 'Укажите сумму'
                     });
                 }
 
@@ -81,7 +69,7 @@ var kassaConstructForm = kassaConstructForm || {};
                 const contacts = [
                     form.querySelector('input[name="email"]'),
                     form.querySelector('input[name="cps_phone"]'),
-                    form.querySelector('input[name="cps_email"]'),
+                    form.querySelector('input[name="cps_email"]')
                 ];
 
                 const defaultContact = contacts[2] || contacts[1] || contacts[0];
@@ -97,20 +85,20 @@ var kassaConstructForm = kassaConstructForm || {};
             formErrorHandler(errors) {
                 errors.forEach(function (error) {
                     let wrapper = document.createElement('div');
-                    wrapper.innerHTML = '<div class="ym-hint">'+error.text+'</div>';
+                    wrapper.innerHTML = '<div class="ym-hint">' + error.text + '</div>';
                     wrapper.appendChild(error.field.cloneNode());
                     wrapper.classList.add('ym-block-with-hint');
-                    error.field.parentNode.replaceChild(wrapper, error.field)
+                    error.field.parentNode.replaceChild(wrapper, error.field);
                     wrapper.classList.add('ym-visible-hint');
                     setTimeout(() => (wrapper.classList.remove('ym-visible-hint')), 5000);
-                })
+                });
             },
             isNeedReceipt(form) {
                 let products = form.querySelectorAll('.ym-product');
                 return products.length > 0;
             },
             buildReceipt(form) {
-                let receipt = {customer: {}, items:[]};
+                let receipt = { customer: {}, items: [] };
                 let contactInput = this.getAvailableCustomerContact(form);
 
                 if (contactInput.value.indexOf('@') > -1) {
@@ -129,36 +117,15 @@ var kassaConstructForm = kassaConstructForm || {};
                         },
                         paymentSubjectType: product.querySelector('input[name="paymentSubjectType"]').value,
                         paymentMethodType: product.querySelector('input[name="paymentMethodType"]').value,
-                        tax: product.querySelector('input[name="tax"]').value,
-                    })
-                })
+                        tax: product.querySelector('input[name="tax"]').value
+                    });
+                });
 
                 return JSON.stringify(receipt);
             }
-        }
+        };
 
         const _handlers = {
-            countPlus(e) {
-                let input = e.target.parentNode.querySelector('.ym-input');
-                input.value = parseFloat(input.value) + COUNT_STEP;
-                input.findParents('.ym-product').querySelector('input[name="quantity"]').value = input.value;
-                input.dispatchEvent(eventChange);
-            },
-            countMinus(e) {
-                let input = e.target.parentNode.querySelector('.ym-input');
-                if (input.value <= 0) {
-                    return;
-                }
-                input.value = parseFloat(input.value) - COUNT_STEP;
-                input.findParents('.ym-product').querySelector('input[name="quantity"]').value = input.value;
-                input.dispatchEvent(eventChange);
-            },
-            afterChangeInput(e) {
-                let input = e.target;
-                let form = input.findParents('.yoomoney-payment-form');
-                e.target.value = parseFloat(e.target.value).toFixed(2);
-                _suppMethods.countFilter(input).calculateProductPrice(input).calculateFullPrice(form);
-            },
             sendForm(e) {
                 e.preventDefault();
                 let form = e.target;
@@ -166,7 +133,7 @@ var kassaConstructForm = kassaConstructForm || {};
 
                 let errors = _suppMethods.calculateFullPrice(form).validatePaymentForm(form);
                 if (errors.length > 0) {
-                    _suppMethods.formErrorHandler(errors)
+                    _suppMethods.formErrorHandler(errors);
                     return;
                 }
 
@@ -176,12 +143,9 @@ var kassaConstructForm = kassaConstructForm || {};
 
                 form.submit();
             }
-        }
+        };
 
-        const eventChange = new Event('change', {
-            bubbles: true,
-            cancelable: true,
-        });
+        const eventChange = new Event('change', { bubbles: true, cancelable: true });
 
         let _forms;
 
@@ -189,7 +153,6 @@ var kassaConstructForm = kassaConstructForm || {};
          * Constructor
          */
         (function __construct() {
-            _setGlobalFunctions();
             _setForms();
             _initHandlers();
         })();
@@ -199,7 +162,6 @@ var kassaConstructForm = kassaConstructForm || {};
                 _setForms();
                 _forms.forEach(function (form) {
                     _initFormHandlers(form);
-                    _initInputsHandlers(form);
                     _calculateDefaultValues(form);
                 });
             }
@@ -212,10 +174,9 @@ var kassaConstructForm = kassaConstructForm || {};
         function _initHandlers() {
             _forms.forEach(function (form) {
                 _initFormHandlers(form);
-                _initInputsHandlers(form);
                 _calculateDefaultValues(form);
                 _suppMethods.calculateFullPrice(form);
-            })
+            });
         }
 
         function _initFormHandlers(form) {
@@ -226,43 +187,13 @@ var kassaConstructForm = kassaConstructForm || {};
             form.setAttribute('data-active-listeners', 'true');
         }
 
-        function _initInputsHandlers(form) {
-            let inputs = form.querySelectorAll('.ym-count-input');
-            inputs.forEach(function (input) {
-                let inputText = input.querySelector('.ym-input');
-                if (inputText.hasAttribute('data-active-listeners')) {
-                    return;
-                }
-                input.querySelector('.ym-count-plus').addEventListener('click', _handlers.countPlus.bind(_handlers));
-                input.querySelector('.ym-count-minus').addEventListener('click', _handlers.countMinus.bind(_handlers));
-                inputText.addEventListener('change', _handlers.afterChangeInput.bind(_handlers));
-                inputText.setAttribute('data-active-listeners', 'true');
-            })
-        }
-
         function _calculateDefaultValues(form) {
-            setTimeout(function (){
+            setTimeout(function () {
                 let inputs = form.querySelectorAll('.ym-count-input');
                 inputs.forEach(function (input) {
                     input.querySelector('.ym-input').dispatchEvent(eventChange);
-                })
-            }, 500)
+                });
+            }, 500);
         }
-
-        function _setGlobalFunctions() {
-            Element.prototype.findParents = function(selector) {
-                let element = this;
-
-                while ((element = element.parentElement) !== null) {
-                    if (element.nodeType !== Node.ELEMENT_NODE) {
-                        continue;
-                    }
-
-                    if (element.matches(selector)) {
-                        return element;
-                    }
-                }
-            };
-        }
-    })()
-})(kassaConstructForm)
+    })();
+})(kassaConstructForm);

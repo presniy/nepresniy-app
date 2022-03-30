@@ -24,9 +24,6 @@
 }
 
 .yoomoney-payment-form .ym-align-items-start {
-    -webkit-box-align: start;
-    -webkit-align-items: start;
-    -ms-flex-align: start;
     align-items: start;
 }
 
