@@ -124,35 +124,6 @@
     font-size: 15px;
 }
 
-.yoomoney-payment-form .ym-count-input {
-    position: relative;
-}
-
-.yoomoney-payment-form .ym-count-input .ym-count-control {
-    display: block;
-    width: 14px;
-    height: 32px;
-    position: absolute;
-    cursor: pointer;
-}
-
-.yoomoney-payment-form .ym-count-input .ym-count-minus {
-    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMiIgdmlld0JveD0iMCAwIDE0IDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDBWMkgxNFYwSDBaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjYiLz4NCjwvc3ZnPg==") no-repeat center;
-    top: 0;
-    right: 33px;
-}
-
-.yoomoney-payment-form .ym-count-input .ym-count-plus {
-    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTggNlYwSDZWNkgwVjhINlYxNEg4VjhIMTRWNkg4WiIgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMC42Ii8+DQo8L3N2Zz4=") no-repeat center;
-    top: 0;
-    right: 9px;
-}
-
-.yoomoney-payment-form .ym-count-input input {
-    max-width: 210px;
-    padding-right: 47px;
-}
-
 .yoomoney-payment-form .ym-block-with-hint {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
