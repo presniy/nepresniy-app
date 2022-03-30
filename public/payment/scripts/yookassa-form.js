@@ -10,26 +10,6 @@ var kassaConstructForm = kassaConstructForm || {};
             formatPrice(price) {
                 return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(price);
             },
-            calculateFullPrice(form) {
-                let resultPriceOutput = form.querySelector('.ym-result-price');
-                let productsPrice = form.querySelectorAll('.ym-product-price');
-
-                if (productsPrice.length < 1) {
-                    return this;
-                }
-
-                let fullPrice = 0;
-                productsPrice.forEach(function (productLine) {
-                    let price = productLine.textContent.replace(/\s/g, '').replace(',', '.');
-                    fullPrice += parseFloat(price);
-                });
-                form.querySelector('.ym-sum-input').value = fullPrice;
-                if (resultPriceOutput !== null) {
-                    resultPriceOutput.querySelector('.ym-text-crop').innerText = resultPriceOutput.dataset.text;
-                    resultPriceOutput.querySelector('.ym-price-output').innerText = _suppMethods.formatPrice(fullPrice);
-                }
-                return this;
-            },
             validatePaymentForm(form) {
                 let errors = [];
                 let contactInput = null;
@@ -49,38 +29,13 @@ var kassaConstructForm = kassaConstructForm || {};
                         errorText = 'Укажите email для чека';
                     }
 
-                    errors.push({
-                        field: contactInput,
-                        text: errorText
-                    });
-                }
-
-                let sumInput = form.querySelector('.ym-sum-input');
-                if (sumInput.value <= 0) {
-                    errors.push({
-                        field: sumInput,
-                        text: 'Укажите сумму'
-                    });
+                    errors.push({ field: contactInput, text: errorText });
                 }
 
                 return errors;
             },
             getAvailableCustomerContact(form) {
-                const contacts = [
-                    form.querySelector('input[name="email"]'),
-                    form.querySelector('input[name="cps_phone"]'),
-                    form.querySelector('input[name="cps_email"]')
-                ];
-
-                const defaultContact = contacts[2] || contacts[1] || contacts[0];
-
-                let contact = null;
-                contacts.forEach(function (input) {
-                    if (input && input.value) {
-                        contact = input;
-                    }
-                });
-                return contact || defaultContact;
+                return form.querySelector('input[name="cps_email"]');
             },
             formErrorHandler(errors) {
                 errors.forEach(function (error) {
@@ -131,7 +86,7 @@ var kassaConstructForm = kassaConstructForm || {};
                 let form = e.target;
 
 
-                let errors = _suppMethods.calculateFullPrice(form).validatePaymentForm(form);
+                let errors = _suppMethods.validatePaymentForm(form);
                 if (errors.length > 0) {
                     _suppMethods.formErrorHandler(errors);
                     return;
@@ -175,7 +130,6 @@ var kassaConstructForm = kassaConstructForm || {};
             _forms.forEach(function (form) {
                 _initFormHandlers(form);
                 _calculateDefaultValues(form);
-                _suppMethods.calculateFullPrice(form);
             });
         }
 
