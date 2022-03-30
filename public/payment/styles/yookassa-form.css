@@ -1,5 +1,4 @@
 .yoomoney-payment-form {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 480px;
     padding: 0 20px;
@@ -8,9 +7,6 @@
 }
 
 .yoomoney-payment-form .ym-align-space-between {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -27,7 +23,6 @@
 }
 
 .yoomoney-payment-form .ym-input {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     height: 32px;
@@ -39,39 +34,17 @@
     font-size: 15px;
 }
 
-.yoomoney-payment-form .ym-input::-webkit-input-placeholder {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-}
-
-.yoomoney-payment-form .ym-input::-moz-placeholder {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-}
-
-.yoomoney-payment-form .ym-input::-ms-input-placeholder {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-}
-
-.yoomoney-payment-form .ym-input::-ms-input-placeholder {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-}
-
 .yoomoney-payment-form .ym-input::placeholder {
     color: rgba(0, 0, 0, 0.4);
     font-size: 15px;
 }
 
 .yoomoney-payment-form .ym-block-with-hint {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
 }
 
 .yoomoney-payment-form .ym-block-with-hint .ym-hint {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: absolute;
     visibility: hidden;
@@ -80,12 +53,9 @@
     font-size: 13px;
     line-height: 12px;
     padding: 10px;
-    top: -webkit-calc(100% + 10px);
     top: calc(100% + 10px);
     cursor: default;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     white-space: nowrap;
     z-index: 100;
@@ -99,8 +69,6 @@
     width: 12px;
     height: 12px;
     background: #FF3333;
-    -webkit-transform: translateX(-50%) rotate(45deg);
-    -ms-transform: translateX(-50%) rotate(45deg);
     transform: translateX(-50%) rotate(45deg);
 }
 
@@ -137,9 +105,6 @@
 }
 
 .yoomoney-payment-form .ym-payment-btn-block .ym-btn-pay {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     min-height: 32px;
     line-height: 32px;
