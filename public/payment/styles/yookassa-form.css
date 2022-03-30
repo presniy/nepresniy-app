@@ -108,56 +108,6 @@
     visibility: visible;
 }
 
-.yoomoney-payment-form .ym-products {
-    font-size: 15px;
-    color: #000;
-}
-
-.yoomoney-payment-form .ym-products .ym-product {
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.yoomoney-payment-form .ym-products .ym-product:after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 108.33333333%;
-    left: -4.16666667%;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.yoomoney-payment-form .ym-products .ym-product .ym-product-line {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.yoomoney-payment-form .ym-products .ym-product .ym-product-line .ym-product-description {
-    max-width: 210px;
-}
-
-.yoomoney-payment-form .ym-products .ym-product .ym-product-line .ym-product-description .ym-product-count {
-    color: rgba(0, 0, 0, 0.4);
-    padding-right: 3px;
-}
-
-.yoomoney-payment-form .ym-products .ym-product:last-of-type:after {
-    background: transparent;
-}
-
 .yoomoney-payment-form .ym-customer-info .ym-input {
     margin-top: 12px;
 }
@@ -204,10 +154,6 @@
     max-width: 190px;
     text-align: left;
     text-transform: capitalize;
-}
-
-.ym-display-none {
-    display: none !important;
 }
 
 @media only screen and (max-width: 480px) {

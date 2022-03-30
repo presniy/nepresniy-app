@@ -35,13 +35,14 @@ function main() {
             return 0 < products.length;
         },
         buildReceipt(form) {
-            let receipt = { customer: {}, items: [] };
-            let contactInput = this.getEmailField(form);
-            receipt.customer.email = contactInput.value;
+            const elEmail = this.getEmailField(form);
+            const elProducts = form.querySelectorAll('.ym-product');
 
-            let products = form.querySelectorAll('.ym-product');
-            products.forEach(function (product) {
-                receipt.items.push({
+            const receipt = {
+                customer: {
+                    email: elEmail.value
+                },
+                items: elProducts.map(product => ({
                     text: product.querySelector('input[name="text"]').value,
                     quantity: product.querySelector('input[name="quantity"]').value,
                     price: {
@@ -50,8 +51,8 @@ function main() {
                     paymentSubjectType: product.querySelector('input[name="paymentSubjectType"]').value,
                     paymentMethodType: product.querySelector('input[name="paymentMethodType"]').value,
                     tax: product.querySelector('input[name="tax"]').value
-                });
-            });
+                }))
+            };
 
             return JSON.stringify(receipt);
         }

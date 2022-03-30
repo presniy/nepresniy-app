@@ -7,21 +7,13 @@
     <link rel="stylesheet" href="styles/yookassa-form.css">
 </head>
 <body>
-
     <form class="yoomoney-payment-form"
           action="https://yookassa.ru/integration/simplepay/payment"
           method="post"
           accept-charset="utf-8">
 
         <div class="ym-products">
-            <div class="ym-block-title ym-products-title">Товары</div>
-
             <div class="ym-product">
-                <div class="ym-product-line">
-                    <span class="ym-product-description">Премиальный пакет</span>
-                    <span class="ym-product-price" data-price="1000">1&nbsp;000,00&nbsp;₽</span>
-                </div>
-
                 <input type="hidden" name="text" value="Премиальный пакет">
                 <input type="hidden" name="price" value="1000">
                 <input type="hidden" name="quantity" value="1">
@@ -31,7 +23,8 @@
             </div>
         </div>
 
-        <input value="" type="hidden" name="ym_merchant_receipt">
+        <input name="ym_merchant_receipt" type="hidden">
+        <input name="customerNumber" type="hidden" value="Спринт Пасха 2022. Премиальный пакет">
 
         <div class="ym-customer-info">
             <div class="ym-block-title">О покупателе</div>
