@@ -1,12 +1,19 @@
 main();
 
 function main() {
-    const _suppMethods = {
-        validatePaymentForm(form) {
-            if (!this.isNeedReceipt(form)) {
-                return [];
-            }
+    const product = {
+        text: 'Премиальный пакет',
+        quantity: '1',
+        price: {
+            amount: '1000'
+        },
+        paymentSubjectType: 'service',
+        paymentMethodType: 'full_prepayment',
+        tax: '1'
+    };
 
+    const paymentFormService = {
+        validatePaymentForm(form) {
             let errors = [];
             const elEmail = this.getEmailField(form);
             const contactPattern = /^([+]?[0-9]{9})|((([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})))$/;
@@ -19,8 +26,8 @@ function main() {
         getEmailField(form) {
             return form.querySelector('input[name="cps_email"]');
         },
-        formErrorHandler(errors) {
-            errors.forEach(function (error) {
+        handleErrors(errors) {
+            errors.forEach(error => {
                 let wrapper = document.createElement('div');
                 wrapper.innerHTML = '<div class="ym-hint">' + error.text + '</div>';
                 wrapper.appendChild(error.field.cloneNode());
@@ -30,28 +37,12 @@ function main() {
                 setTimeout(() => wrapper.classList.remove('ym-visible-hint'), 5000);
             });
         },
-        isNeedReceipt(form) {
-            let products = form.querySelectorAll('.ym-product');
-            return 0 < products.length;
-        },
         buildReceipt(form) {
             const elEmail = this.getEmailField(form);
-            const elProducts = form.querySelectorAll('.ym-product');
 
             const receipt = {
-                customer: {
-                    email: elEmail.value
-                },
-                items: elProducts.map(product => ({
-                    text: product.querySelector('input[name="text"]').value,
-                    quantity: product.querySelector('input[name="quantity"]').value,
-                    price: {
-                        amount: product.querySelector('input[name="price"]').value
-                    },
-                    paymentSubjectType: product.querySelector('input[name="paymentSubjectType"]').value,
-                    paymentMethodType: product.querySelector('input[name="paymentMethodType"]').value,
-                    tax: product.querySelector('input[name="tax"]').value
-                }))
+                customer: { email: elEmail.value },
+                items: [product]
             };
 
             return JSON.stringify(receipt);
@@ -64,17 +55,17 @@ function main() {
         const elForm = document.querySelector('.yoomoney-payment-form');
         elForm.addEventListener('submit', e => {
             e.preventDefault();
-            let form = e.target;
+            const form = e.target;
 
-            let errors = _suppMethods.validatePaymentForm(form);
+            const errors = paymentFormService.validatePaymentForm(form);
             if (0 < errors.length) {
-                _suppMethods.formErrorHandler(errors);
+                paymentFormService.handleErrors(errors);
                 return;
             }
 
-            if (_suppMethods.isNeedReceipt(form)) {
-                form.querySelector('input[name="ym_merchant_receipt"]').value = _suppMethods.buildReceipt(form);
-            }
+            form.querySelector('input[name="ym_merchant_receipt"]').value = paymentFormService.buildReceipt(form);
+            form.querySelector('input[name="shopSuccessURL"]').value = `${location.origin}/payment/success`
+            form.querySelector('input[name="shopFailURL"]').value = `${location.origin}/payment/fail`
 
             form.submit();
         });

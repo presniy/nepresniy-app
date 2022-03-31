@@ -12,19 +12,13 @@
           method="post"
           accept-charset="utf-8">
 
-        <div class="ym-products">
-            <div class="ym-product">
-                <input type="hidden" name="text" value="Премиальный пакет">
-                <input type="hidden" name="price" value="1000">
-                <input type="hidden" name="quantity" value="1">
-                <input type="hidden" name="paymentSubjectType" value="service">
-                <input type="hidden" name="paymentMethodType" value="full_prepayment">
-                <input type="hidden" name="tax" value="1">
-            </div>
-        </div>
-
+        <input name="shopId" type="hidden" value="874662">
         <input name="ym_merchant_receipt" type="hidden">
         <input name="customerNumber" type="hidden" value="Спринт Пасха 2022. Премиальный пакет">
+        <input name="shopSuccessURL" type="hidden" value="https://presniy.ru/payment/success">
+        <input name="shopFailURL" type="hidden" value="https://presniy.ru/payment/fail">
+        <input name="paymentType" type="hidden" value="AC">
+        <input name="sum" class="ym-input ym-sum-input" type="hidden" value="1000">
 
         <div class="ym-customer-info">
             <div class="ym-block-title">О покупателе</div>
@@ -33,17 +27,9 @@
             <label><input name="custName" class="ym-input" placeholder="ФИО" type="text" value=""></label>
         </div>
 
-        <div class="ym-hidden-inputs">
-            <!--<input name="shopSuccessURL" type="hidden" value="https://presniy.ru/payment/success">-->
-            <!--<input name="shopFailURL" type="hidden" value="https://presniy.ru/payment/fail">-->
-            <input name="paymentType" type="hidden" value="AC">
-        </div>
-
         <div class="ym-payment-btn-block ym-before-line ym-align-space-between">
-            <input name="sum" class="ym-input ym-sum-input" type="hidden" value="1000">
             <button data-text="Купить" class="ym-btn-pay">Купить</button>
         </div>
-        <input name="shopId" type="hidden" value="874662">
     </form>
 
     <script src="scripts/yookassa-form.js"></script>
