@@ -23,6 +23,26 @@ body {
     background-size: cover;
 }
 
+.env-banner {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+
+    padding: 16px;
+
+    color: var(--text-opposite);
+    background-color: var(--primary);
+}
+
+.env-banner_type_local,
+.env-banner_type_dev {
+    display: flex;
+}
+
 article {
     display: flex;
     flex-direction: row;

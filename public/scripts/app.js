@@ -1,8 +1,20 @@
 import { PaymentService } from './services/payment/payment.service.js';
+import { env } from './env/env.js';
 
 main();
 
 async function main() {
+    setupEnvBanner();
+    setupOrderForm();
+}
+
+function setupEnvBanner() {
+    const elEnvBanner = document.querySelector('.env-banner');
+    elEnvBanner.classList.add(`env-banner_type_${env.app.env}`);
+    elEnvBanner.innerHTML = `${env.app.env} environment`
+}
+
+function setupOrderForm() {
     const paymentService = new PaymentService();
     const elForm = document.querySelector('#frm-order');
     elForm.addEventListener('submit', async (e) => {
