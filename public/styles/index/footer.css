@@ -1,0 +1,44 @@
+footer {
+    padding-right: 20px;
+    padding-left: 20px;
+
+    text-align: center;
+
+    color: gray;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0;
+}
+
+.contacts__item {
+    display: block;
+    font-size: .75rem;
+}
+
+@media (min-width: 520px) {
+
+    .contacts__item {
+        position: relative;
+        display: inline-block;
+        padding-right: 14px;
+    }
+
+    .contacts__item:after {
+        content: "|";
+
+        position: absolute;
+        right: 6px;
+    }
+
+    .contacts__item:last-of-type {
+        padding-right: 0;
+    }
+
+    .contacts__item:last-of-type:after {
+        content: none;
+    }
+}
