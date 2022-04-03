@@ -21,6 +21,7 @@ button {
     justify-content: center;
     border-radius: 4px;
 
+    margin: 0;
     padding: 15px 30px;
 
     font-family: inherit;
