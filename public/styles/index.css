@@ -7,8 +7,6 @@
 }
 
 html, body {
-    height: 100vh;
-    width: 100vw;
 }
 
 body {
@@ -17,7 +15,7 @@ body {
     justify-content: flex-end;
     gap: 40px;
 
-    padding: var(--body-padding);
+    padding: var(--body-padding) 0;
 
     background: url(../assets/bg/index.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -53,8 +51,9 @@ article {
 
 .sections-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
 }
 
 section {
@@ -149,40 +148,6 @@ p:first-of-type {
     color: #a0a0a0;
 }
 
-a {
-    color: var(--primary)
-}
-
-button,
-.btn {
-    padding: 15px 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 4px;
-
-    font-family: inherit;
-    font-weight: bold;
-
-    border: none;
-    outline: none;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    color: var(--text-opposite);
-    background-color: var(--primary);
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-
-    cursor: pointer;
-
-    transition: all .3s;
-}
-
-button:hover,
-.btn:hover {
-    box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.15);
-}
-
 footer {
     padding-right: var(--content-padding);
     padding-left: var(--content-padding);
@@ -193,8 +158,9 @@ footer {
 }
 
 .contacts {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     font-size: 0;
 }
 
@@ -223,6 +189,16 @@ footer {
     content: none;
 }
 
-.icon {
-    font-size: 1.25rem;
+@media (min-width: 1024px) {
+
+    html, body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .sections-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }

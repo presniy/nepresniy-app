@@ -6,3 +6,37 @@ html, body {
     font-size: 16px;
     line-height: 1.4;
 }
+
+a {
+    color: var(--primary)
+}
+
+button,
+.btn {
+    padding: 15px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-weight: bold;
+
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--text-opposite);
+    background-color: var(--primary);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+
+    transition: all .3s;
+}
+
+button:hover,
+.btn:hover {
+    box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.15);
+}
