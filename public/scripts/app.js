@@ -9,6 +9,10 @@ async function main() {
 }
 
 function setupEnvBanner() {
+    if (env.app.hideEnvBanner) {
+        return;
+    }
+
     const elEnvBanner = document.querySelector('.env-banner');
     elEnvBanner.classList.add(`env-banner_type_${env.app.env}`);
     elEnvBanner.innerHTML = `${env.app.env} environment`

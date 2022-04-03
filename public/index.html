@@ -25,72 +25,70 @@
 <body>
     <div class="env-banner"></div>
     <article>
-        <section class="info">
-            <h1 class="title">
-                <span class="title__item">Спринт</span>
-                <span class="title__item">Пасха 2022</span>
-            </h1>
+        <div class="sections-container">
+            <section class="section-info">
+                <h1 class="section-info__title">Спринт `Пасха 2022`</h1>
+                <div class="section-info__content">
+                    <div class="description">
+                        <p class="description__item">
+                            Огромное спасибо за интерес к Спринту<br/>
+                            и <b>Премиальному пакету!</b>
+                        </p>
+                        <p class="description__item">Этот пакет включает:</p>
+                    </div>
 
-            <div class="info__content">
-                <div class="description">
-                    <p class="description__item">
-                        Огромное спасибо за интерес к Спринту<br/>
-                        и <b>Премиальному пакету!</b>
-                    </p>
-                    <p class="description__item">Этот пакет включает:</p>
+                    <ul class="package">
+                        <li class="package__item">
+                            Билет на участие без необходимости выполнения дополнительных условий
+                        </li>
+                        <li class="package__item">
+                            Удобный файл с рецептурой, который Вы сможете оставить себе и после окончания Спринта
+                        </li>
+                        <li class="package__item">
+                            Участие в розыгрыше дополнительного приза!
+                        </li>
+                    </ul>
                 </div>
-
-                <ul class="package">
-                    <li class="package__item">
-                        Билет на участие без необходимости выполнения дополнительных условий
-                    </li>
-                    <li class="package__item">
-                        Удобный файл с рецептурой, который Вы сможете оставить себе и после окончания Спринта
-                    </li>
-                    <li class="package__item">
-                        Участие в розыгрыше дополнительного приза!
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="order">
-            <form id="frm-order">
-                <p>Период проведения: <b>11.04.2022 - 18.04.2022</b></p>
-                <p>Цена участия: <b>₽1000</b></p>
-                <div class="fields">
-                    <label class="field">
-                        <input class="field__input"
-                               type="text"
-                               name="fullname"
-                               placeholder="Имя и фамилия"
-                               required/>
-                    </label>
-                    <label class="field">
-                        <input class="field__input"
-                               type="text"
-                               name="country"
-                               placeholder="Страна"
-                               required/>
-                    </label>
-                    <label class="field">
-                        <input class="field__input"
-                               type="email"
-                               name="email"
-                               placeholder="email"
-                               required/>
-                    </label>
-                    <label class="field">
-                        <input class="field__input"
-                               type="text"
-                               name="instagram"
-                               placeholder="instagram nickname"
-                               required/>
-                    </label>
-                </div>
-                <input type="hidden" name="productId" value="28cb14dc-6adb-46db-ae84-5693f3d1777f">
-                <button type="submit">Купить</button>
-            </form>
-        </section>
+            </section>
+            <section class="section-order">
+                <form id="frm-order">
+                    <p>Период проведения: <b>11.04.2022 - 18.04.2022</b></p>
+                    <p>Цена участия: <b>₽1000</b></p>
+                    <div class="fields">
+                        <label class="field">
+                            <input class="field__input"
+                                   type="text"
+                                   name="fullname"
+                                   placeholder="Имя и фамилия"
+                                   required/>
+                        </label>
+                        <label class="field">
+                            <input class="field__input"
+                                   type="text"
+                                   name="country"
+                                   placeholder="Страна"
+                                   required/>
+                        </label>
+                        <label class="field">
+                            <input class="field__input"
+                                   type="email"
+                                   name="email"
+                                   placeholder="email"
+                                   required/>
+                        </label>
+                        <label class="field">
+                            <input class="field__input"
+                                   type="text"
+                                   name="instagram"
+                                   placeholder="instagram nickname"
+                                   required/>
+                        </label>
+                    </div>
+                    <input type="hidden" name="productId" value="28cb14dc-6adb-46db-ae84-5693f3d1777f">
+                    <button type="submit">Купить</button>
+                </form>
+            </section>
+        </div>
     </article>
 
     <footer>

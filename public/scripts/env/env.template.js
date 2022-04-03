@@ -1,6 +1,7 @@
 export const env = {
     app: {
-        env: '${ENV_NAME}'
+        env: '${ENV_NAME}',
+        hideEnvBanner: '${HIDE_ENV_BANNER}' === 'true'
     },
     bff: {
         urls: {
