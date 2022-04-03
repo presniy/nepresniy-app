@@ -1,6 +1,9 @@
 :root {
     --font-family: 'Montserrat', sans-serif;
     --primary: #E33E5C;
-    --bg-content: #fff;
+
+    --bg: #fff;
+
+    --text: #000;
     --text-opposite: #fff;
 }
