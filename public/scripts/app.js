@@ -14,6 +14,7 @@ function setupEnvBanner() {
     }
 
     const elEnvBanner = document.querySelector('.env-banner');
+    elEnvBanner.addEventListener('click', () => elEnvBanner.remove());
     elEnvBanner.classList.add(`env-banner_type_${env.app.env}`);
     elEnvBanner.innerHTML = `${env.app.env} environment`
 }

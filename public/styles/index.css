@@ -9,11 +9,6 @@ body {
 }
 
 .env-banner {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
     display: none;
     justify-content: center;
 
@@ -21,6 +16,7 @@ body {
 
     color: var(--text-opposite);
     background-color: var(--primary);
+    border-bottom: 2px solid var(--bg);
 }
 
 .env-banner_type_local,
@@ -190,6 +186,11 @@ footer {
         background-size: cover;
     }
 
+    .env-banner {
+        margin-top: -32px;
+        border-bottom: none;
+    }
+
     .sections-container {
         align-items: center;
         gap: 32px;
@@ -295,5 +296,9 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    .section {
+        height: 100%;
     }
 }
