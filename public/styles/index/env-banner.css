@@ -18,6 +18,7 @@
 
     .env-banner {
         margin-top: -32px;
+        margin-bottom: 32px;
         border-bottom: none;
     }
 }

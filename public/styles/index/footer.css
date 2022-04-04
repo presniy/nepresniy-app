@@ -8,10 +8,15 @@ footer {
 }
 
 .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
     font-size: 0;
+}
+
+.contacts__line {
+    margin-bottom: 4px;
+}
+
+.contacts__line:last-of-type {
+    margin-bottom: 0;
 }
 
 .contacts__item {

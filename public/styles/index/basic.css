@@ -10,14 +10,14 @@ section {
 @media (min-width: 520px) {
 
     body {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-
         padding: 32px 0;
 
         background: url(../../assets/bg/index.jpg) no-repeat center center fixed;
         background-size: cover;
+    }
+
+    article {
+        margin-bottom: 32px;
     }
 
     section {
@@ -30,6 +30,8 @@ section {
 @media (min-width: 1024px) {
 
     html, body {
+        display: flex;
+        flex-direction: column;
         height: 100vh;
         width: 100vw;
     }
