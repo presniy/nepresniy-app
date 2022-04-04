@@ -1,0 +1,47 @@
+.content {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #FFF;
+}
+
+.content__header {
+    text-align: center;
+
+    margin: 0;
+    padding: 20px;
+
+    font-size: 1.4rem;
+
+    color: #FFF;
+    background-color: #E33E5C;
+}
+
+.content__status-image {
+    width: 32px;
+    height: 32px;
+}
+
+.content__image {
+    width: 100%;
+    max-height: 50vw;
+    object-fit: cover;
+}
+
+.content__body {
+    padding: 20px;
+}
+
+@media (min-width: 520px) {
+
+    .content__header {
+        padding: 24px;
+    }
+
+    .content__content {
+        padding: 24px;
+    }
+
+    .content__image {
+        display: none;
+    }
+}

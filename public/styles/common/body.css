@@ -1,0 +1,27 @@
+body {
+    padding-bottom: 80px;
+}
+
+@media (min-width: 520px) {
+
+    body {
+        padding: 32px 0;
+
+        background: url(../../assets/bg/index.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    html, body {
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        flex-direction: column;
+
+        height: 100%;
+    }
+}
