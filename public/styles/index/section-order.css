@@ -62,7 +62,11 @@
     padding: 20px;
 
     border-radius: 0;
-    border-top: 2px solid var(--bg);
+}
+
+.btn-submit,
+.btn-submit:hover {
+    box-shadow: 0 2px 16px 8px rgb(0, 0, 0, 0.15);
 }
 
 @media (min-width: 520px) {
@@ -110,6 +114,10 @@
         padding: 15px 30px;
 
         border-radius: 4px;
-        border-top: none;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-submit:hover {
+        box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.15);
     }
 }
