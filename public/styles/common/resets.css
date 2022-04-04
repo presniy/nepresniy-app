@@ -4,17 +4,21 @@ html, body {
     margin: 0;
     padding: 0;
 
-    font-family: var(--font-family);
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 1.4;
 }
 
 a {
-    color: var(--primary)
+    color: #E33E5C
 }
 
 ul, p {
     margin: 0;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
 }
 
 button {
@@ -32,8 +36,8 @@ button {
     text-transform: uppercase;
     text-decoration: none;
 
-    color: var(--text-opposite);
-    background-color: var(--primary);
+    color: #FFF;
+    background-color: #E33E5C;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 
     cursor: pointer;

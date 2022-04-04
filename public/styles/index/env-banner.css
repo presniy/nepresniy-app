@@ -4,9 +4,9 @@
 
     padding: 16px;
 
-    color: var(--text-opposite);
-    background-color: var(--primary);
-    border-bottom: 2px solid var(--bg);
+    color: #FFF;
+    background-color: #E33E5C;
+    border-bottom: 2px solid #FFF;
 }
 
 .env-banner_type_local,

@@ -1,8 +1,8 @@
 .event-params {
     padding: 20px;
 
-    color: var(--text-opposite);
-    background-color: var(--primary);
+    color: #FFF;
+    background-color: #E33E5C;
 }
 
 .event-param {
@@ -33,7 +33,6 @@
     box-sizing: border-box;
 
     font-size: 1rem;
-    font-family: var(--font-family);
 
     border-radius: 4px;
     border: 2px solid transparent;
@@ -45,8 +44,8 @@
 }
 
 .field__input:focus {
-    background-color: var(--bg);
-    border: 2px solid var(--primary);
+    background-color: #FFF;
+    border: 2px solid #E33E5C;
 }
 
 .field__input::placeholder {
@@ -84,7 +83,7 @@
         margin-bottom: 24px;
         padding: 0;
 
-        color: var(--text);
+        color: #000;
         background-color: transparent;
     }
 
@@ -105,7 +104,7 @@
     }
 
     .field__input {
-        background-color: var(--bg);
+        background-color: #FFF;
     }
 
     .btn-submit {
