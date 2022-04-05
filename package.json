@@ -8,15 +8,14 @@
     "private": true,
     "scripts": {
         "serve": "http-server-spa public index.html 8181",
-        "build": "yarn envsubst:index && yarn envsubst:payment-success && yarn envsubst:env && yarn envsubst:ym",
+        "build": "yarn envsubst:index && yarn envsubst:status && yarn envsubst:env && yarn envsubst:ym",
         "envsubst:index": "envsub --env-file .env public/index.template.html public/index.html",
-        "envsubst:payment-success": "envsub --env-file .env public/payment/success/index.template.html public/payment/success/index.html",
+        "envsubst:status": "envsub --env-file .env public/status/index.template.html public/status/index.html",
         "envsubst:env": "envsub --env-file .env public/scripts/env/env.template.js public/scripts/env/env.js",
         "envsubst:ym": "envsub --env-file .env public/scripts/ym.counter.template.js public/scripts/ym.counter.js"
     },
     "devDependencies": {
         "http-server-spa": "1.3.0",
-        "envsub": "4.0.7",
-        "mjml": "4.7.1"
+        "envsub": "4.0.7"
     }
 }

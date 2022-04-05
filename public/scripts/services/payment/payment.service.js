@@ -12,7 +12,7 @@ export class PaymentService {
         const queryStr = Array.from(Object.entries(paymentRequest))
             .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
             .join('&');
-        const result = await this.httpClient.get(`${base}${payment}?${queryStr}`);
+        const result = await this.httpClient.post(`${base}${payment}?${queryStr}`);
         return result.confirmation.confirmation_url;
     }
 }
