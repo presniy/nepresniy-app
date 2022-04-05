@@ -1,5 +1,5 @@
 body {
-    padding-bottom: 0;
+    padding-bottom: 32px;
 }
 
 @media (min-width: 1024px) {

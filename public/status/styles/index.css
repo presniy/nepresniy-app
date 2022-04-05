@@ -5,4 +5,5 @@
 
 @import "index/body.css";
 @import "index/content.css";
-@import "index/footer.css";
+@import "index/busy-indicator.css";
+@import "index/utils.css";

@@ -1,6 +1,9 @@
 .content {
     width: 100%;
     box-sizing: border-box;
+
+    margin-bottom: 64px;
+
     background-color: #FFF;
 }
 
@@ -30,6 +33,11 @@
 
 .content__body {
     padding: 20px;
+}
+
+.content__body_type_wait-status {
+    padding: 64px;
+    text-align: center;
 }
 
 .message {
