@@ -1,6 +1,6 @@
 .content {
-    max-width: 480px;
-    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
     background-color: #FFF;
 }
 
@@ -22,6 +22,7 @@
 }
 
 .content__image {
+    display: block;
     width: 100%;
     max-height: 50vw;
     object-fit: cover;
@@ -31,7 +32,23 @@
     padding: 20px;
 }
 
+.message {
+}
+
+.message__line {
+    margin-bottom: 8px;
+}
+
+.message__line:last-of-type {
+    margin-bottom: 0;
+}
+
 @media (min-width: 520px) {
+
+    .content {
+        max-width: 480px;
+        margin: 0 auto;
+    }
 
     .content__header {
         padding: 24px;

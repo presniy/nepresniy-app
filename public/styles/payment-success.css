@@ -3,5 +3,6 @@
 @import "common/env-banner.css";
 @import "common/footer.css";
 
-@import "payment-success/content-container.css";
+@import "payment-success/body.css";
 @import "payment-success/content.css";
+@import "payment-success/footer.css";
