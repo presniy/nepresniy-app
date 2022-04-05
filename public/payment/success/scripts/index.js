@@ -1,4 +1,4 @@
-import { EnvBanner } from './components/env-banner/env-banner.js';
+import { EnvBanner } from '../../../scripts/components/env-banner/env-banner.js';
 
 main();
 

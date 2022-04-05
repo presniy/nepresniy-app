@@ -4,6 +4,5 @@ tmp/
 
 .env
 index.html
-payment-success.html
 env.js
 ym.counter.js

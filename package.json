@@ -10,7 +10,7 @@
         "serve": "http-server-spa public index.html 8181",
         "build": "yarn envsubst:index && yarn envsubst:payment-success && yarn envsubst:env && yarn envsubst:ym",
         "envsubst:index": "envsub --env-file .env public/index.template.html public/index.html",
-        "envsubst:payment-success": "envsub --env-file .env public/payment-success.template.html public/payment-success.html",
+        "envsubst:payment-success": "envsub --env-file .env public/payment/success/index.template.html public/payment/success/index.html",
         "envsubst:env": "envsub --env-file .env public/scripts/env/env.template.js public/scripts/env/env.js",
         "envsubst:ym": "envsub --env-file .env public/scripts/ym.counter.template.js public/scripts/ym.counter.js"
     },
