@@ -55,7 +55,7 @@
 
     .content {
         max-width: 480px;
-        margin: 0 auto;
+        margin: 0 auto 64px;
     }
 
     .content__header {
@@ -68,5 +68,12 @@
 
     .content__image {
         display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .content {
+        margin-bottom: 0;
     }
 }
