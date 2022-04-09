@@ -1,17 +1,12 @@
-import { PaymentService } from './services/payment/payment.service.js';
+import { EnvBanner } from './components/env-banner/env-banner.js';
+import { OrderForm } from './components/order-form/order-form.js';
 
 main();
 
 async function main() {
-    const paymentService = new PaymentService();
-    const elForm = document.querySelector('#frm-order');
-    elForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    const envBanner = new EnvBanner();
+    envBanner.setup();
 
-        const elInputs = Array.from(elForm.querySelectorAll('input'));
-        const paymentRequest = elInputs.reduce((res, elInput) => ({ ...res, [elInput.name]: elInput.value }), {});
-
-        const paymentUrl = await paymentService.getPaymentUrl(paymentRequest);
-        window.location.replace(paymentUrl);
-    });
+    const orderForm = new OrderForm();
+    orderForm.setup();
 }

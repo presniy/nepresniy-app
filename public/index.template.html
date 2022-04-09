@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
+    <title>Спринт Пасха 2022 | Алексей Пресный</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="styles/index.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="env-banner"></div>
+    <article>
+        <div class="sections-container">
+            <section class="section-info">
+                <h1 class="section-info__title">Спринт &nbsp; 'Пасха 2022'</h1>
+                <img class="section-info__image" src="assets/bg/index.jpg" alt="Пасха 2022"/>
+                <div class="section-info__content">
+                    <div class="description">
+                        <p class="description__item">
+                            Огромное спасибо за интерес к Спринту
+                            и <b>Премиальному пакету!</b>
+                        </p>
+                        <p class="description__item">Этот пакет включает:</p>
+                    </div>
+
+                    <ul class="package">
+                        <li class="package__item">
+                            Билет на участие без необходимости выполнения дополнительных условий
+                        </li>
+                        <li class="package__item">
+                            Удобный файл с рецептурой, который Вы сможете оставить себе и после окончания Спринта
+                        </li>
+                        <li class="package__item">
+                            Участие в розыгрыше дополнительного приза!
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section-order">
+                <form class="form-order" id="frm-order">
+                    <div class="event-params">
+                        <p class="event-param">
+                            Период проведения:
+                            <b class="event-param__value">11.04.2022 - 18.04.2022</b>
+                        </p>
+                        <p class="event-param">
+                            Цена участия:
+                            <b class="event-param__value">₽1000</b>
+                        </p>
+                    </div>
+                    <div class="fields">
+                        <label class="field">
+                            <input class="field__input"
+                                   type="text"
+                                   name="fullname"
+                                   placeholder="Имя и фамилия"
+                                   required/>
+                        </label>
+                        <label class="field">
+                            <input class="field__input"
+                                   type="text"
+                                   name="country"
+                                   placeholder="Страна"
+                                   required/>
+                        </label>
+                        <label class="field">
+                            <input class="field__input"
+                                   type="email"
+                                   name="email"
+                                   placeholder="email"
+                                   required/>
+                        </label>
+                        <label class="field">
+                            <input class="field__input"
+                                   type="text"
+                                   name="instagram"
+                                   placeholder="instagram nickname"
+                                   required/>
+                        </label>
+                    </div>
+                    <input type="hidden" name="productId" value="28cb14dc-6adb-46db-ae84-5693f3d1777f">
+                    <button class="btn-submit" type="submit">Купить</button>
+                </form>
+            </section>
+        </div>
+    </article>
+
+    <footer>
+        <div class="contacts">
+            <div class="contacts__line">
+                <span class="contacts__item">Организатор: Алексей Пресный</span>
+                <span class="contacts__item">ИНН: 781436197685</span>
+            </div>
+            <div class="contacts__line">
+                <span class="contacts__item">E-mail: <a href="mailto:alexey@presniy.ru">alexey@presniy.ru</a></span>
+                <span class="contacts__item">
+                    Instagram: <a href="https://www.instagram.com/alexey_pres/" target="_blank">@alexey_pres</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js" type="module"></script>
+    <script async src="scripts/ym.counter.js"></script>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/${YM_COUNTER_ID}" style="position:absolute; left:-9999px;" alt=""/>
+        </div>
+    </noscript>
+</body>
+</html>
