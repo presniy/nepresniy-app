@@ -1,4 +1,5 @@
 @import "../../styles/common/resets.css";
+@import "../../styles/common/variables.css";
 @import "../../styles/common/body.css";
 @import "../../styles/common/env-banner.css";
 @import "../../styles/common/footer.css";

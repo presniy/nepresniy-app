@@ -1,5 +1,5 @@
 .section-info {
-    background-color: #FFF;
+    background-color: var(--bg);
 }
 
 .section-info__title {
@@ -8,8 +8,8 @@
 
     font-size: 1.4rem;
 
-    color: #FFF;
-    background-color: #E33E5C;
+    color: var(--text-opposite);
+    background-color: var(--primary);
 }
 
 .section-info__image {

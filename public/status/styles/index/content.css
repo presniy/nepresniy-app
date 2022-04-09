@@ -4,7 +4,7 @@
 
     margin-bottom: 64px;
 
-    background-color: #FFF;
+    background-color: var(--bg);
 }
 
 .content__header {
@@ -15,8 +15,8 @@
 
     font-size: 1.4rem;
 
-    color: #FFF;
-    background-color: #E33E5C;
+    color: var(--text-opposite);
+    background-color: var(--primary);
 }
 
 .content__status-image {
@@ -56,6 +56,8 @@
     .content {
         max-width: 480px;
         margin: 0 auto 64px;
+
+        box-shadow: 0 0 24px 12px rgba(0, 0, 0, .1);
     }
 
     .content__header {

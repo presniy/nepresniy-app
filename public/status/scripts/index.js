@@ -16,7 +16,7 @@ async function main() {
         const productService = new ProductService();
         product = await productService.getProduct(params.token);
     } catch (e) {
-        window.location.href = window.location.origin;
+        // window.location.href = window.location.origin;
         return;
     }
 

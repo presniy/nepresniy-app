@@ -11,7 +11,7 @@ html, body {
 
 a {
     text-decoration: none;
-    color: #E33E5C
+    color: var(--primary)
 }
 
 ul, p {
@@ -37,8 +37,8 @@ button {
     text-transform: uppercase;
     text-decoration: none;
 
-    color: #FFF;
-    background-color: #E33E5C;
+    color: var(--text-opposite);
+    background-color: var(--primary);
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 
     cursor: pointer;
