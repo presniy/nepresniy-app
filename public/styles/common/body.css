@@ -8,7 +8,7 @@ body {
         padding: 32px 0;
 
         background: url(../../assets/bg/index.jpg) no-repeat center center fixed;
-        background-size: cover;
+        background-size: 70%;
     }
 }
 

@@ -15,6 +15,7 @@
 .section-info__image {
     width: 100%;
     max-height: 50vw;
+    margin-bottom: -48px;
     object-fit: cover;
 }
 
