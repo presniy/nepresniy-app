@@ -76,6 +76,23 @@
 
 @media (min-width: 1024px) {
 
+    .content-container {
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        flex-direction: column;
+
+        -webkit-flex-basis: 0;
+        flex-basis: 0;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
     .content {
         margin-bottom: 0;
     }
