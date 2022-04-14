@@ -1,4 +1,4 @@
 ###
 
-# @name Get payment form
-GET {{baseUrl}}/payment
+# @name Create a payment (Get payment form)
+POST {{baseUrl}}/payments
