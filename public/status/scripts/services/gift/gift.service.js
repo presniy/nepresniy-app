@@ -1,14 +1,14 @@
 import { HttpService } from '../../../../scripts/services/http/http.service.js';
 import { env } from '../../../../scripts/env/env.js';
 
-export class ProductService {
+export class GiftService {
 
     constructor() {
         this.httpClient = new HttpService();
     }
 
-    getProduct(token) {
-        const url = `${env.bff.urls.base}${env.bff.urls.product}?token=${token}`;
+    getGift(id) {
+        const url = `${env.bff.urls.base}${env.bff.urls.gifts}/${id}`;
         return this.httpClient.get(url);
     }
 }
