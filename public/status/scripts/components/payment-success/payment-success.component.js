@@ -6,7 +6,7 @@ export class PaymentSuccessComponent {
         const elWaitStatus = document.querySelector('.content_type_wait-status');
         elWaitStatus.classList.add('hidden');
 
-        const elLink = document.querySelector('.action_type_download-recipe a');
+        const elLink = document.querySelector('.recipe-download-link');
         elLink.setAttribute('href', gift.recipeUrl);
     }
 }
