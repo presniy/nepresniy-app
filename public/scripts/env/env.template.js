@@ -7,7 +7,8 @@ export const env = {
         urls: {
             base: '${BFF_API_URL}/api',
             payments: '/payments',
-            gifts: '/gifts'
+            gifts: '/gifts',
+            eggs: '/eggs'
         }
     }
 };
