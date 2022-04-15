@@ -8,9 +8,10 @@
     "private": true,
     "scripts": {
         "serve": "http-server public --port 8181 -c-1",
-        "build": "yarn envsubst:index && yarn envsubst:status && yarn envsubst:env && yarn envsubst:ym",
+        "build": "yarn envsubst:index && yarn envsubst:status && yarn envsubst:egg && yarn envsubst:env && yarn envsubst:ym",
         "envsubst:index": "envsub --env-file .env public/index.template.html public/index.html",
         "envsubst:status": "envsub --env-file .env public/status/index.template.html public/status/index.html",
+        "envsubst:egg": "envsub --env-file .env public/egg/index.template.html public/egg/index.html",
         "envsubst:env": "envsub --env-file .env public/scripts/env/env.template.js public/scripts/env/env.js",
         "envsubst:ym": "envsub --env-file .env public/scripts/ym.counter.template.js public/scripts/ym.counter.js"
     },
