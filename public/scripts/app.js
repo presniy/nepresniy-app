@@ -13,6 +13,9 @@ async function main() {
     const productService = new ProductService();
     const product = await productService.findOne(env.app.productId);
 
+    document.querySelector('.sections-container').classList.remove('hidden');
+    document.querySelector('footer').classList.remove('hidden');
+
     const infoSection = new InfoSection();
     infoSection.setup(product);
 
