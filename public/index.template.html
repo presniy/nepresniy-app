@@ -27,15 +27,18 @@
     <article>
         <div class="sections-container">
             <section class="section-info">
-                <h1 class="section-info__title">Спринт &nbsp; "Пасха 2022"</h1>
-                <img class="section-info__image" src="assets/bg/index.jpg" alt="Пасха 2022"/>
+                <h1 class="section-info__title product__sprint-full-name">Спринт &nbsp; "Пасха 2022"</h1>
+                <img class="section-info__image" src="assets/bg/index.jpg" alt="Тематическое изображение для Спринта"/>
                 <div class="section-info__content">
                     <div class="description">
                         <p class="description__item">
                             Огромное спасибо за Ваш интерес к Спринту
-                            и тарифу "<b>Премиум</b>"!
+                            и тарифу "<b class="product__offer-name">Премиум</b>"!
                         </p>
-                        <p class="description__item">Приобретая тариф "<b>Премиум</b>", Вы получаете:</p>
+                        <p class="description__item">
+                            Приобретая тариф "<b class="product__offer-name">Премиум</b>",
+                            Вы получаете:
+                        </p>
                     </div>
 
                     <ul class="package">
@@ -46,7 +49,7 @@
                             рецептуру конкурсного изделия отдельным файлом с бессрочным доступом
                         </li>
                         <li class="package__item">
-                            бонусную рецептуру десерта "Новое начало"
+                            бонусную рецептуру десерта "<span class="product__bonus-recipe-name">Новое начало</span>"
                         </li>
                         <li class="package__item">
                             участие в розыгрыше приза зрительских симпатий
@@ -59,11 +62,15 @@
                     <div class="event-params">
                         <p class="event-param">
                             Период проведения:
-                            <b class="event-param__value">20.04.2022 - 27.04.2022</b>
+                            <b class="event-param__value">
+                                <span class="product__start-date">20.04.2022</span>
+                                -
+                                <span class="product__finish-date">27.04.2022</span>
+                            </b>
                         </p>
                         <p class="event-param">
                             Стоимость участия:
-                            <b class="event-param__value">₽720</b>
+                            <b class="event-param__value">₽<span class="product__price">750</span></b>
                         </p>
                     </div>
                     <div class="fields">
@@ -96,7 +103,7 @@
                                    required/>
                         </label>
                     </div>
-                    <input type="hidden" name="productId" value="28cb14dc-6adb-46db-ae84-5693f3d1777f">
+                    <input type="hidden" name="productId" value="">
                     <button class="btn-submit" type="submit">Купить</button>
                 </form>
             </section>
