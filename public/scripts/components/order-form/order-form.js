@@ -3,8 +3,14 @@ import { EggService } from '../../services/egg/egg.service.js';
 
 export class OrderForm {
 
-    setup() {
+    setup(product) {
         const elForm = document.querySelector('#frm-order');
+
+        elForm.querySelector('.product__start-date').textContent = product.startDate;
+        elForm.querySelector('.product__finish-date').textContent = product.finishDate;
+        elForm.querySelector('.product__price').textContent = product.price;
+        elForm.querySelector('input[name="productId"]').value = product.id;
+
         elForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
