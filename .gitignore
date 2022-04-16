@@ -3,6 +3,5 @@ node_modules
 tmp/
 
 .env
-index.html
 env.js
 ym.counter.js
