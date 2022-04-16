@@ -16,7 +16,7 @@ export class HttpService {
                 return payload;
             }
 
-            throw new Error(`${response.statusText}: ${JSON.stringify(payload)}`);
+            throw payload;
         });
     }
 }
