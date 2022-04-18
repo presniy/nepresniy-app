@@ -11,7 +11,7 @@ async function main() {
     const params = Object.fromEntries(urlSearchParams.entries());
 
     const eggService = new EggService();
-    const egg = await eggService.findOne(params.id || '');
+    const egg = await eggService.findOne(params.id || '', { shouldNotify: true });
 
     if (egg) {
         document.querySelector('.content__header').textContent = egg.title;

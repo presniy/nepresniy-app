@@ -7,10 +7,10 @@ export class EggService {
         this.httpClient = new HttpService();
     }
 
-    async findOne(id) {
+    async findOne(id, { shouldNotify } = {}) {
         const { base, eggs } = env.bff.urls;
         try {
-            return await this.httpClient.get(`${base}${eggs}/${id}`);
+            return await this.httpClient.get(`${base}${eggs}/${id}${shouldNotify ? '?notify=true' : ''}`);
         } catch (e) {
             return undefined;
         }
