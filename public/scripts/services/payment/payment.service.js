@@ -13,6 +13,6 @@ export class PaymentService {
             .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
             .join('&');
         const result = await this.httpClient.post(`${base}${payments}?${queryStr}`);
-        return result.confirmation.confirmation_url;
+        return result.url;
     }
 }
