@@ -10,6 +10,7 @@ export class OrderForm {
         elForm.querySelector('.product__finish-date').textContent = product.finishDate;
         elForm.querySelector('.product__price').textContent = product.price;
         elForm.querySelector('input[name="productId"]').value = product.id;
+        elForm.querySelector('.btn-submit').toggleAttribute('disabled', product.isOutOfDate);
 
         elForm.addEventListener('submit', async (e) => {
             e.preventDefault();

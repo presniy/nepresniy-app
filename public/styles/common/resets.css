@@ -49,3 +49,9 @@ button {
 button:hover {
     box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.15);
 }
+
+button[disabled] {
+    box-shadow: none;
+    background: #a9a9a9;
+    pointer-events: none;
+}
